@@ -1,6 +1,12 @@
 # Prerequisites
 *.d
 
+# Mac
+*.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
 # Compiled Object files
 *.slo
 *.lo
