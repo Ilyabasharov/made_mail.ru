@@ -1,0 +1,72 @@
+beginner.how_many_items_in_hdfs:
+    stdin: "9"
+intermediate.hdfs_list_recursively:
+    stdin: "hdfs dfs -ls -R /data/wiki"
+intermediate.hdfs_list_recursively_human_readable:
+    stdin: "hdfs dfs -ls -R -h /data/wiki"
+intermediate.hdfs_file_replication_factor:
+    stdin: "3"
+intermediate.hdfs_folder_replication_factor:
+    stdin: "0"
+intermediate.hdfs_describe_size:
+    stdin: "actual"
+intermediate.hdfs_cumulative_size:
+    stdin: "hdfs dfs -du -s /data/wiki"
+intermediate.hdfs_create_folder:
+    stdin: "hdfs dfs -mkdir i.basharov"
+intermediate.hdfs_create_nested_folder:
+    stdin: "hdfs dfs -mkdir -p i.basharov/x/y/z"
+intermediate.hdfs_remove_nested_folders:
+    stdin: "hdfs dfs -rm -R i.basharov/x"
+intermediate.hdfs_trash_behavior: #временное хранилище для файлов, которые были удалены пользователем из файлового менеджера, но еще не были окончательно удалены из файловой системы
+    stdin: "hdfs dfs -rm -R -skipTrash i.basharov/x"
+intermediate.hdfs_create_empty_file:
+    stdin: "hdfs dfs -touchz i.basharov/file"
+intermediate.hdfs_create_small_file:
+    stdin: |-
+        touch i.basharov.txt
+        vim i.basharov.txt
+        hdfs dfs -put i.basharov.txt i.basharov/i.basharov.txt
+intermediate.hdfs_output_file:
+    stdin: "hdfs dfs -cat i.basharov/i.basharov.txt"
+intermediate.hdfs_output_file_end:
+    stdin: "hdfs dfs -tail i.basharov/i.basharov.txt"
+intermediate.hdfs_output_file_start:
+    stdin: "hdfs dfs -cat i.basharov/i.basharov.txt | head -n 4"
+intermediate.hdfs_tail_vs_unix_tail: #флаг -tail выводит последние 1кб данных, утилита - последние 10 строчек
+    stdin: "tail -c 1024 i.basharov.txt"
+intermediate.hdfs_copy_file:
+    stdin: "hdfs dfs -cp i.basharov/i.basharov.txt i.basharov.txt"
+intermediate.hdfs_move_file:
+    stdin: |-
+        hdfs dfs -cp i.basharov.txt i.basharov1.txt
+        hdfs dfs -rm i.basharov.txt
+intermediate.hdfs_download_and_concatenate:
+    stdin: "hdfs dfs -getmerge i.basharov/ i.basharov/"
+advanced.hdfs_set_file_replication:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+advanced.hdfs_get_files_and_block:
+    stdin: "provide your answer here"
+advanced.hdfs_get_block_information:
+    stdin: "provide your answer here"
+advanced.hdfs_dfs_architecture:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+advanced.webhdfs_read_100B:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+advanced.webhdfs_curl_follow_redirects:
+    stdin: "provide your answer here"
+advanced.webhdfs_get_file_detailed_information:
+    stdin: "provide your answer here"
+advanced.webhdfs_change_file_replication:
+    stdin: "provide your answer here"
+advanced.webhdfs_append_to_file:
+    stdin: "provide your answer here"
