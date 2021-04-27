@@ -1,0 +1,4 @@
+prettytable==2.1.0
+tqdm==4.60.0
+kaggle==1.5.12
+timm==0.4.5
